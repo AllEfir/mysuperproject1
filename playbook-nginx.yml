@@ -16,7 +16,7 @@
  
     - name: copy conf.file nginx
       copy:
-        src: /Ansible/nginx.conf
+        src: nginx.conf
         dest: /etc/nginx/
       notify: Restart Nginx
    
