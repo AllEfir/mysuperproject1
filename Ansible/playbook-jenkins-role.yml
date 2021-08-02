@@ -1,7 +1,0 @@
----
-- name: install jenkins
-  hosts: slave
-  become: yes
-  
-  roles:
-     - deploy_jenkins
