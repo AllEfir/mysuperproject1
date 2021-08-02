@@ -1,6 +1,6 @@
 ---
-- name: Install Nginx in prod server
-  hosts: all
+- name: Install Nginx in server
+  hosts: localhost
   become: yes
 
   tasks:
@@ -13,26 +13,13 @@
 
     - name: service for nginx
       service: name=nginx state=started enabled=yes
-
-    - name: install git
-      yum: name=git state=present
-
-    - name: deploy site git
-      git:
-        repo: 'https://github.com/AllEfir/files.git'
-        dest: /home/files/
  
     - name: copy conf.file nginx
       copy:
-        src: /home/makentosh/Desktop/nginx.conf
+        src: /Ansible/nginx.conf
         dest: /etc/nginx/
       notify: Restart Nginx
    
-    - name: install certbot
-      yum: name=certbot-nginx state=present
-
-    - name: run certbot and generate ssl(https) cert
-      shell: certbot --nginx -m Nekit4444@ukr.net --agree-tos -d makentosh.xyz -n
 
   handlers:
     - name: Restart Nginx
