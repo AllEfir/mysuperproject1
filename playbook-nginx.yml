@@ -18,6 +18,13 @@
       file:
         path: /home/files
         state: directory
+         
+     
+    - name: copy site
+      copy:
+        src: index.html
+        dest: /home/files/
+        own: ec2-user
  
     - name: copy conf.file nginx
       copy:
