@@ -14,6 +14,11 @@
     - name: service for nginx
       service: name=nginx state=started enabled=yes
  
+    - name: Creates directory
+      file:
+        path: /home/files
+        state: directory
+ 
     - name: copy conf.file nginx
       copy:
         src: nginx.conf
