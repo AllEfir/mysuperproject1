@@ -1,6 +1,6 @@
 ---
 - name: Install Nginx in server
-  hosts: localhost
+  hosts: all
   become: yes
 
   tasks:
