@@ -1,2 +1,2 @@
 [test_server]
-test ansible_host=18.192.53.40 owner=Mykyta
+test ansible_host=18.194.208.142 owner=Mykyta
