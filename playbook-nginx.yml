@@ -21,7 +21,7 @@
          
      
     - name: copy site
-      copy:
+      ansible.builtin.copy:
         src: index.html
         dest: /home/files/
         own: ec2-user
